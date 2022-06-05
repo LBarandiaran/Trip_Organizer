@@ -16,11 +16,11 @@ city_list = ["Lima, Peru", "Boulder, Colorado", "Chicago, Illinois", "London, En
 
 transportation_list = ["plane", "train", "boat", "stagecoach", "teleporter", "Slip 'n Slide"]
 
-lima_entertainment_list = ["visiting the central Plaza downtown", "going to the beach", "working on survival skills at a soccer game", "shoping 'till you drop at an artisanal market"]
+lima_entertainment_list = ["visiting the central Plaza downtown", "going to the beach", "working on survival skills at a soccer game", "shopping 'till you drop at an artisanal market"]
 boulder_entertainment_list = ["going hiking along the Flatirons", "taking in a CU Buffs football game at Folsom Field", "climbing The Bastile in Eldorado Canyon", "strolling around the Pearl Street Mall"]
 chicago_entertainment_list = ["going to the Field Museum", "visiting the Navy Pier and Aquarium", "checking out the beach and swim in Lake Michigan", "visiting the observation deck at the top of the Hancock Building"]
-london_entertainment_list = ["taking in a concert at St. Martin in the Fields", "visiting the British Museum", "driving around Picadilly Circus for a couple hours", "walking along the River Thames"]
-corpus_entertainment_list = ["going out to Padre Island and enjoy the beach", "visiting the USS Lexington", "playing a round of golf", "going to check out the boats at the Marina downtown"]
+london_entertainment_list = ["taking in a concert at St. Martin in the Fields", "visiting the British Museum", "driving around and around Picadilly Circus for a couple hours", "walking along the River Thames"]
+corpus_entertainment_list = ["going out to Padre Island and enjoying the beach", "visiting the USS Lexington", "playing a round of golf", "going to check out the boats at the Marina downtown"]
 seoul_entertainment_list = ["taking a tour of the DMZ north of the city", "walking the networks of parks along the Han River", "enjoying the shopping and coffee houses in Apgujeong", "spending some time at a PC bang"]
 
 lima_restaurant_list = ["Central", "La Mar", "Astrid & Gaston", "Punto Azul"]
@@ -29,4 +29,10 @@ chicago_restaurant_list = ["Gino's", "Charlie Trotter's", "Alinea", "Lula Cafe"]
 london_restaurant_list = ["Chishuru", "Planque", "Le Gavroche", "Singburi"]
 corpus_restaurant_list = ["Executive Surf Club", "Taqueria Jalisco", "Las Milpas", "Whataburger"]
 seoul_restaurant_list = ["Jungsik", "La Yeon", "Gaon", "Cleo"]
+
+import random       # built-in module for random generation
+
+print("Welcome to the Day Trip Generator!  We are here to help design a fun vacation!")
+generated_city = random.choice(city_list)
+print(f"We have selected {generated_city} for your destination! Does this sound good? Enter y/n:")
 
