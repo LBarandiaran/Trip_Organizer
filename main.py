@@ -32,11 +32,13 @@ seoul_restaurant_list = ["Jungsik", "La Yeon", "Gaon", "Cleo"]
 
 import random       # built-in module for random generation
 
-# # Create a random city destination
+# # Create a random item generator
 
 def random_item_picker(list):
     random_item = random.choice(list)
     return random_item
+
+# #  Create a City Corfirmation function
 
 def city_confirmation():
     random_city = random_item_picker(city_list)
@@ -50,6 +52,80 @@ def city_confirmation():
     
 confirmed_city = city_confirmation()
 
+# #  Create a Transporation Confirmation function
+
+def travel_confirmation():
+    random_trans = random_item_picker(transportation_list)
+    trans_choice = input(f"We have selected {random_trans} for your mode of transportation!  Is this your preferred method of travel? Enter y/n: ")
+    if trans_choice == "y":
+        print("OK wonderful!  Now let's talk about entertainment...")
+        return random_trans
+    elif trans_choice == "n":
+        print("Not to worry, there are other transporation options...")
+        return travel_confirmation()
+
+confirmed_trans = travel_confirmation()
+
+
+# #  Create an Entertainment Confirmation function
+
+def entertain_confirmation():
+    if confirmed_city == "Lima, Peru":   #I'm sure there's a more elegant way of calling the list item: I was thinking "if city_confirmation = city_list[0]:" or something like that
+        random_entertain = random_item_picker(lima_entertainment_list)
+        entertain_choice = input(f"We have selected {random_entertain} for your entertainment option!  Does this sound like fun?  Enter y/n: ")
+        if entertain_choice == "y":
+            print("Great choice! Now let's talk about dining options...")
+            return random_entertain
+        elif entertain_choice == "n":
+            print("Not a problem, there are other activities, let's make another choice...")
+            return entertain_confirmation()
+    if confirmed_city == "Boulder, Colorado":   
+        random_entertain = random_item_picker(boulder_entertainment_list)
+        entertain_choice = input(f"We have selected {random_entertain} for your entertainment option!  Does this sound like fun?  Enter y/n: ")
+        if entertain_choice == "y":
+            print("Great choice! Now let's talk about dining options...")
+            return random_entertain
+        elif entertain_choice == "n":
+            print("Not a problem, there are other activities, let's make another choice...")
+            return entertain_confirmation()
+    if confirmed_city == "Chicago, Illinois":   
+        random_entertain = random_item_picker(chicago_entertainment_list)
+        entertain_choice = input(f"We have selected {random_entertain} for your entertainment option!  Does this sound like fun?  Enter y/n: ")
+        if entertain_choice == "y":
+            print("Great choice! Now let's talk about dining options...")
+            return random_entertain
+        elif entertain_choice == "n":
+            print("Not a problem, there are other activities, let's make another choice...")
+            return entertain_confirmation()
+    if confirmed_city == "London, England":   
+        random_entertain = random_item_picker(london_entertainment_list)
+        entertain_choice = input(f"We have selected {random_entertain} for your entertainment option!  Does this sound like fun?  Enter y/n: ")
+        if entertain_choice == "y":
+            print("Great choice! Now let's talk about dining options...")
+            return random_entertain
+        elif entertain_choice == "n":
+            print("Not a problem, there are other activities, let's make another choice...")
+            return entertain_confirmation()
+    if confirmed_city == "Corpus Christi, Texas": 
+        random_entertain = random_item_picker(corpus_entertainment_list)
+        entertain_choice = input(f"We have selected {random_entertain} for your entertainment option!  Does this sound like fun?  Enter y/n: ")
+        if entertain_choice == "y":
+            print("Great choice! Now let's talk about dining options...")
+            return random_entertain
+        elif entertain_choice == "n":
+            print("Not a problem, there are other activities, let's make another choice...")
+            return entertain_confirmation()
+    if confirmed_city == "Seoul, South Korea":
+        random_entertain = random_item_picker(seoul_entertainment_list)
+        entertain_choice = input(f"We have selected {random_entertain} for your entertainment option!  Does this sound like fun?  Enter y/n: ")
+        if entertain_choice == "y":
+            print("Great choice! Now let's talk about dining options...")
+            return random_entertain
+        elif entertain_choice == "n":
+            print("Not a problem, there are other activities, let's make another choice...")
+            return entertain_confirmation()
+
+confirmed_entertain = entertain_confirmation()
 
 
 
