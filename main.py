@@ -30,7 +30,10 @@ london_restaurant_list = ["Chishuru", "Planque", "Le Gavroche", "Singburi"]
 corpus_restaurant_list = ["Executive Surf Club", "Taqueria Jalisco", "Las Milpas", "Whataburger"]
 seoul_restaurant_list = ["Jungsik", "La Yeon", "Gaon", "Cleo"]
 
-import random       # built-in module for random generation
+import random
+from tkinter import N, Y       # built-in module for random generation
+
+print("Welcome to the Day Trip Generator!  Let me apologize in advance, but you did put your vacation in my hands!  Let's see what we can come up with...")
 
 # # Create a random item generator
 
@@ -38,16 +41,21 @@ def random_item_picker(list):
     random_item = random.choice(list)
     return random_item
 
+
+
 # #  Create a City Corfirmation function
 
 def city_confirmation():
     random_city = random_item_picker(city_list)
     destination_choice = input(f"We have selected {random_city} for your destination! Would you like to go to this city? Enter y/n: ")
     if destination_choice == "y":
-        print("That's great! You will have a wonderful visit there! Now let's talk about transporatation...")
+        print("That's great! You will have a wonderful visit there! Now let's talk about transportation...")
         return random_city
     elif destination_choice == "n":
         print("No problem.... it's the off-season there anyway, let's make another choice")
+        return city_confirmation()
+    elif destination_choice != "y" or "n":
+        print("Please use y/n only")
         return city_confirmation()
     
 confirmed_city = city_confirmation()
@@ -62,6 +70,9 @@ def travel_confirmation():
         return random_trans
     elif trans_choice == "n":
         print("Not to worry, there are other transporation options...")
+        return travel_confirmation()
+    elif trans_choice != "y" or "n":
+        print("Please use y/n only")
         return travel_confirmation()
 
 confirmed_trans = travel_confirmation()
@@ -79,6 +90,9 @@ def entertain_confirmation():
         elif entertain_choice == "n":
             print("Not a problem, there are other activities, let's make another choice...")
             return entertain_confirmation()
+        elif entertain_choice != "y" or "n":
+            print("Please use y/n only")
+            return entertain_confirmation()
     if confirmed_city == "Boulder, Colorado":   
         random_entertain = random_item_picker(boulder_entertainment_list)
         entertain_choice = input(f"We have selected {random_entertain} for your entertainment option!  Does this sound like fun?  Enter y/n: ")
@@ -87,6 +101,9 @@ def entertain_confirmation():
             return random_entertain
         elif entertain_choice == "n":
             print("Not a problem, there are other activities, let's make another choice...")
+            return entertain_confirmation()
+        elif entertain_choice != "y" or "n":
+            print("Please use y/n only")
             return entertain_confirmation()
     if confirmed_city == "Chicago, Illinois":   
         random_entertain = random_item_picker(chicago_entertainment_list)
@@ -97,6 +114,9 @@ def entertain_confirmation():
         elif entertain_choice == "n":
             print("Not a problem, there are other activities, let's make another choice...")
             return entertain_confirmation()
+        elif entertain_choice != "y" or "n":
+            print("Please use y/n only")
+            return entertain_confirmation()
     if confirmed_city == "London, England":   
         random_entertain = random_item_picker(london_entertainment_list)
         entertain_choice = input(f"We have selected {random_entertain} for your entertainment option!  Does this sound like fun?  Enter y/n: ")
@@ -105,6 +125,9 @@ def entertain_confirmation():
             return random_entertain
         elif entertain_choice == "n":
             print("Not a problem, there are other activities, let's make another choice...")
+            return entertain_confirmation()
+        elif entertain_choice != "y" or "n":
+            print("Please use y/n only")
             return entertain_confirmation()
     if confirmed_city == "Corpus Christi, Texas": 
         random_entertain = random_item_picker(corpus_entertainment_list)
@@ -115,6 +138,9 @@ def entertain_confirmation():
         elif entertain_choice == "n":
             print("Not a problem, there are other activities, let's make another choice...")
             return entertain_confirmation()
+        elif entertain_choice != "y" or "n":
+            print("Please use y/n only")
+            return entertain_confirmation()
     if confirmed_city == "Seoul, South Korea":
         random_entertain = random_item_picker(seoul_entertainment_list)
         entertain_choice = input(f"We have selected {random_entertain} for your entertainment option!  Does this sound like fun?  Enter y/n: ")
@@ -124,8 +150,113 @@ def entertain_confirmation():
         elif entertain_choice == "n":
             print("Not a problem, there are other activities, let's make another choice...")
             return entertain_confirmation()
+        elif entertain_choice != "y" or "n":
+            print("Please use y/n only")
+            return entertain_confirmation()
 
 confirmed_entertain = entertain_confirmation()
+
+# # Create a Dining Confirmation function
+
+def dining_confirmation():
+    if confirmed_city == "Lima, Peru":
+        random_dining = random_item_picker(lima_restaurant_list)
+        dining_choice = input(f"We have selected {random_dining} for your dining option!  Does this sound like fun?  Enter y/n: ")
+        if dining_choice == "y":
+            print("Great choice! They have some of the best food in the city!")
+            return random_dining
+        elif dining_choice == "n":
+            print("Not a problem, there are other establishments, let's make another choice...")
+            return dining_confirmation()
+        elif dining_choice != "y" or "n":
+            print("Please use y/n only")
+            return dining_confirmation()
+    if confirmed_city == "Boulder, Colorado":
+        random_dining = random_item_picker(boulder_restaurant_list)
+        dining_choice = input(f"We have selected {random_dining} for your dining option!  Does this sound like fun?  Enter y/n: ")
+        if dining_choice == "y":
+            print("Great choice! They have some of the best food in the city!")
+            return random_dining
+        elif dining_choice == "n":
+            print("Not a problem, there are other establishments, let's make another choice...")
+            return dining_confirmation()
+        elif dining_choice != "y" or "n":
+            print("Please use y/n only")
+            return dining_confirmation()
+    if confirmed_city == "Chicago, Illinois":
+        random_dining = random_item_picker(chicago_restaurant_list)
+        dining_choice = input(f"We have selected {random_dining} for your dining option!  Does this sound like fun?  Enter y/n: ")
+        if dining_choice == "y":
+            print("Great choice! They have some of the best food in the city!")
+            return random_dining
+        elif dining_choice == "n":
+            print("Not a problem, there are other establishments, let's make another choice...")
+            return dining_confirmation()
+        elif dining_choice != "y" or "n":
+            print("Please use y/n only")
+            return dining_confirmation()
+    if confirmed_city == "London, England":
+        random_dining = random_item_picker(london_restaurant_list)
+        dining_choice = input(f"We have selected {random_dining} for your dining option!  Does this sound like fun?  Enter y/n: ")
+        if dining_choice == "y":
+            print("Great choice! They have some of the best food in the city!")
+            return random_dining
+        elif dining_choice == "n":
+            print("Not a problem, there are other establishments, let's make another choice...")
+            return dining_confirmation()
+        elif dining_choice != "y" or "n":
+            print("Please use y/n only")
+            return dining_confirmation()
+    if confirmed_city == "Corpus Christi, Texas":
+        random_dining = random_item_picker(corpus_restaurant_list)
+        dining_choice = input(f"We have selected {random_dining} for your dining option!  Does this sound like fun?  Enter y/n: ")
+        if dining_choice == "y":
+            print("Great choice! They have some of the best food in the city!")
+            return random_dining
+        elif dining_choice == "n":
+            print("Not a problem, there are other establishments, let's make another choice...")
+            return dining_confirmation()
+        elif dining_choice != "y" or "n":
+            print("Please use y/n only")
+            return dining_confirmation()
+    if confirmed_city == "Seoul, South Korea":
+        random_dining = random_item_picker(seoul_restaurant_list)
+        dining_choice = input(f"We have selected {random_dining} for your dining option!  Does this sound like fun?  Enter y/n: ")
+        if dining_choice == "y":
+            print("Great choice! They have some of the best food in the city!")
+            return random_dining
+        elif dining_choice == "n":
+            print("Not a problem, there are other establishments, let's make another choice...")
+            return dining_confirmation()
+        elif dining_choice != "y" or "n":
+            print("Please use y/n only")
+            return dining_confirmation()
+
+confirmed_dining = dining_confirmation()
+
+print("Congratulations! You have completed generating your trip of a lifetime!  Now let's confirm the details!")
+
+print("Here is your itinerary:")
+print(f"Destination: {confirmed_city}")
+print(f"Transporatation: {confirmed_trans}")
+print(f"Entertainment: {confirmed_entertain}")
+print(f"Restaurant: {confirmed_dining}")
+
+# #  Create a Final Confirmation function
+
+def final_confirmation():
+    trip_finalize = input("Would you like to confirm this trip? Enter y/n: ")
+    if trip_finalize == "y":
+        print(f"OK.... You are all set!  Prepare yourself for an unforgettable getaway!  You will be arriving in {confirmed_city} by {confirmed_trans}, where you will spend the day {confirmed_entertain}. You will end the evening dining in style at {confirmed_dining}, a famous local restaurant. ")
+        return trip_finalize
+    elif trip_finalize == "n":
+        print("*sigh* All of that work for nothing, let's start all over again")
+        return city_confirmation()
+
+finalized_trip = final_confirmation()
+
+
+
 
 
 
