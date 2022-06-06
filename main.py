@@ -32,7 +32,25 @@ seoul_restaurant_list = ["Jungsik", "La Yeon", "Gaon", "Cleo"]
 
 import random       # built-in module for random generation
 
-print("Welcome to the Day Trip Generator!  We are here to help design a fun vacation!")
-generated_city = random.choice(city_list)
-print(f"We have selected {generated_city} for your destination! Does this sound good? Enter y/n:")
+# # Create a random city destination
+
+def random_item_picker(list):
+    random_item = random.choice(list)
+    return random_item
+
+def city_confirmation():
+    random_city = random_item_picker(city_list)
+    destination_choice = input(f"We have selected {random_city} for your destination! Would you like to go to this city? Enter y/n: ")
+    if destination_choice == "y":
+        print("That's great! You will have a wonderful visit there! Now let's talk about transporatation...")
+        return random_city
+    elif destination_choice == "n":
+        print("No problem.... it's the off-season there anyway, let's make another choice")
+        return city_confirmation()
+    
+confirmed_city = city_confirmation()
+
+
+
+
 
